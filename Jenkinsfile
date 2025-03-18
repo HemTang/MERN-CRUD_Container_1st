@@ -5,7 +5,8 @@ pipeline{
         stage("Build"){
 
             steps{
-                echo 'Building the app'
+                echo 'Building the image/container'
+                sh 'docker-compose -f docker-compose.yml build'
                
             }
 
@@ -22,6 +23,7 @@ pipeline{
 
             steps{
                 echo 'Deploying to production'
+                sh 'docker-compose -f docker-compose.yml up -d'
                
             }
 
