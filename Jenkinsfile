@@ -6,7 +6,7 @@ pipeline{
 
             steps{
                 echo 'Building the image/container'
-                sh 'docker-compose -f docker-compose.yml build'
+                sh 'docker-compose -f docker-compose.yaml build'
                
             }
 
@@ -23,7 +23,7 @@ pipeline{
 
             steps{
                 echo 'Deploying to production'
-                sh 'docker-compose -f docker-compose.yml up -d'
+                sh 'docker-compose -f docker-compose.yaml up -d'
                
             }
 
