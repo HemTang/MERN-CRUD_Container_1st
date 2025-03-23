@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo "Deploying ${STACK_NAME} to Docker Swarm"
                 // Deploy the app to Docker Swarm using the existing docker-compose-deploy.yml file
-                sh "docker stack deploy -c docker-compose-deploy.yml ${STACK_NAME}"  // Deploy the app to Docker Swarm
+                sh "docker stack deploy -c docker-compose.yml ${STACK_NAME}"  // Deploy the app to Docker Swarm
             }
         }
     }
