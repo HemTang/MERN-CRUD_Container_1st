@@ -18,7 +18,7 @@ pipeline {
                     // Authenticate with Docker Hub before deploying
                     docker.withRegistry('https://index.docker.io/v1/', DOCKER_HUB_CREDENTIALS) {
                         // Deploy the app to Docker Swarm using the existing docker-compose-deploy.yml file
-                        sh "docker stack deploy -c docker-compose.yml ${STACK_NAME}"
+                        sh "docker stack deploy -c docker-compose.yaml ${STACK_NAME}"
                     }
                 }
             }
