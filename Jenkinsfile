@@ -5,7 +5,7 @@ pipeline {
         DOCKER_HUB_USERNAME = 'hemtamang9'  // Your Docker Hub username
         IMAGE_NAME_SERVER = "${DOCKER_HUB_USERNAME}/mern-curd_server:latest"  // Image tag for server
         IMAGE_NAME_CLIENT = "${DOCKER_HUB_USERNAME}/mern-curd_client:latest"  // Image tag for client
-        DOCKER_HUB_CREDENTIALS = 'dockerhub-token'  // Jenkins credentials ID for Docker Hub
+        DOCKER_HUB_CREDENTIALS = 'Dockerhub-token'  // Jenkins credentials ID for Docker Hub
     }
 
     stages {
