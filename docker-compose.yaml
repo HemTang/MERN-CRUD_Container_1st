@@ -5,18 +5,29 @@ services:
     image: mongo:latest
     ports:
       - "27017:27017"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
 
   server:
-    build: ./server
+    image: hemtamang9/demopipeline_mern_server:latest  # Pull the server image from Docker Hub
     ports:
       - "8082:8082"
     depends_on:
       - mongo
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
 
   client:
-    build: ./client
+    image: hemtamang9/demopipeline_mern_client:latest  # Pull the client image from Docker Hub
     ports:
       - "3000:3000"
     depends_on:
       - server
-
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
