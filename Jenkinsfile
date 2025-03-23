@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the images locally using docker-compose'
-                sh 'docker-compose -f docker-compose-build.yml build'  // Build the images for both server and client
+                sh 'docker-compose -f docker-compose.yaml build'  // Build the images for both server and client
             }
         }
         stage('Tag and Push to Docker Hub') {
