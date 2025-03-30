@@ -24,11 +24,11 @@ pipeline {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', DOCKER_HUB_CREDENTIALS) {
                       
-                        sh "docker tag mern-curd_server:latest ${IMAGE_NAME_SERVER}"
+                        // sh "docker tag mern-curd_server:latest ${IMAGE_NAME_SERVER}"
                         sh "docker push ${IMAGE_NAME_SERVER}"
 
                       
-                        sh "docker tag mern-curd_client:latest ${IMAGE_NAME_CLIENT}"
+                        // sh "docker tag mern-curd_client:latest ${IMAGE_NAME_CLIENT}"
                         sh "docker push ${IMAGE_NAME_CLIENT}"
                     }
                 }
